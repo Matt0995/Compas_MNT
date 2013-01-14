@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head> 
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>My Slides</title> 
+    <link rel="stylesheet" type="text/css" media="screen, projection, print" 
+     href="slidy.css" />
+    <link rel="stylesheet" type="text/css" media="screen, projection, print" 
+     href="style.css" />
+    <script src="showdown.js"></script>
+    <script src="slidy.js"></script>
+    
+</head>
+<body>
+<script type=text/markdown>
+<!--
+
+
+
+Cahier des Charges : Compas dans l'oeil
+=======================
+*Tout d'abord deux versions du jeu sont possibles,  une sur smartphone/tablette tactile (ou émulateurs) ou une sur ordinateur équipé d'une souris, et pourquoi pas un mode deux joueurs avec  le clavier...*		
+
+__*Le principe général*__  (nous nous interesserons à la version smartphone/tablette tactile)
+Une forme (cercle, triangle, segment, etc) apparait à l'écran, il faut alors apppuyer à l'aide de son doigt sur le centre de cet objet et appuyer.
+
+
+![Formes Géométriques](img/fusion.jpg)
+
+-----------------------------------------------------
+
+**Version smartphone/tablette**
+
+
+Un menu simple: 
+
+* Jouer: Ce qui lance le jeu. 
+* Instructions: Maintenir ce bouton affichera le principe du jeu ainsi que son fonctionnement. 
+* Quitter: Eteindre l'application.
+
+![Ecran accueil](img/ecran.jpg)
+
+-----------------------------------------------------
+**Jouer :**
+"Petit animation avant le lancement"
+
+
+- L'écran apparait, un décompte se lance (3, 2, 1, Go !)
+- Un forme géométrique apparait, le but à de toucher le centre de cette forme géométrique. (Etant sur version smartphone/tablette on utilisera le doigt pour appuyer sur l'écran)
+
+
+    
+-->
+</script>
+<script>
+var scripts = document.getElementsByTagName('script');
+for (var i = 0; i < scripts.length; i++){
+    var script = scripts[i];
+    if (script.type != 'text/markdown') continue;
+    var md = script.innerHTML.replace(/^\s<!--*/, '')
+        .replace(/-->\s*$/, '');
+    var markup = new Showdown.converter().makeHtml(md);
+    var slides = markup.split('<hr />');
+    for (var j = 0; j < slides.length; j++)
+        document.write('<div class=slide>' + slides[j] + '</div>');
+}
+w3c_slidy.add_listener(document.body, "touchend", w3c_slidy.mouse_button_click);
+</script>
+</body>
+</html>
