@@ -56,13 +56,38 @@ Une croix verte apparait pour indiquer le vrai centre .
 -----------------------------------------------------
 **Calcul des points :**  
 
--Le calcul des points s'effectue en prenant en compte la distance qui sépare le vrai centre et de celui choisi par le joueur
- ainsi que le temps .  
+-Le calcul des points s'effectue en prenant en compte la distance qui sépare le vrai centre et celle choisi par le joueur
+ ainsi que le temps .
+
+-Il faut que cette distance soit nul pour que le joueur puis marquer le plus de points.
+-On connait  les coordonnées du centre de la figure et les coordonnées du clique.
  
+Donc on peut calculer la distance séparent le vrai centre de la figure de celle choisit par le joueur garce a :
+
+d² = (x'-x)² + (y'-y)²
+
+donc il suffira de prendre la racine carré .
+
+
  ![Rond_triangle_croix](img/Rond_triangle_croix.JPG)
- 
- 
--->
+
+ -----------------------------------------------------
+ **Principe**:
+ - Le joueur doit cliquer le sur la tablette.
+ - Une croix de couleur verte apparait il peut la deplacer en restant appuyé dessus.
+ - Il doit choisir le centre de la forme géométrique.
+ - Une croix de couleur rouge apparaitra pour lui indiqué le vrai centre.
+ - En attendant le temps tourne , le joueur aura 10 essaies pour réaliser le maximum de point.
+ - On prendra en compte le temps émis pour choisir le centre de le forme géométrique.
+ - Plus le temps est petit, mieux sera le score du joueur sera.
+      -----------------------------------------------------
+ -l'ecran sera partagé en deux :
+    A gauche le joueur poura jouer
+    A droite on verra :
+	- s'afficher le score.
+    - le temps émis pour cliquer sur le centre de la figure géometrique.
+    - la distance.
+	-->
 </script>
 <script>
 var scripts = document.getElementsByTagName('script');
