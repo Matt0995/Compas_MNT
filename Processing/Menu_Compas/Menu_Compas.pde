@@ -3,13 +3,11 @@ float h;
 float l;
 float h2;
 float m;
-float j;
-float menu;
-float i;
 String mode;
-String jeu;
-String instru;
-String quitter;
+String j = "Jouer !";
+String i = "Instructions";
+
+
 void setup() {
   size(300, 240);
   img = loadImage("cible.jpg");
@@ -25,37 +23,46 @@ void draw() {
   size(300,240);
   background(0);
   image(img,0,0);
-  String j = "Jouer !";
-  String i = "Instructions";
-  
-  if(mode = "jeu"){
+ 
+ if(mode == "menu") {
+  size(300,240);
+  background(0);
+  image(img,0,0);
+ }
+ 
+  if(mode == "jeu"){
       println(j);
+      background(255);
 }
     //rect(0,h,l,h2); 
     
- if(mode = "instru"){
+ if(mode == "instru"){
       println(i);
+      background(255);
 }
      //rect(0,125,l,75);
     
 
- if(mode = "quitter"){
+ if(mode == "quitter"){
      println("Quitter");
+     background(255);
+     exit();
     }
       //rect(200,210,100,30);
       
 }
 
 void mousePressed(){
-  if(0<mouseX && l>mouseX && h<mouseY && m>mouseY)
-      mode == "Jouer";
-    
-    
-  if(0<mouseX && l>mouseX && 125<mouseY && 200>mouseY)
-    mode == "Instru"; 
+  if (mode == "menu"){
+     if(0<mouseX && l>mouseX && h<mouseY && m>mouseY) {
+       mode = "jeu";
+     }
+     
+    if(0<mouseX && l>mouseX && 125<mouseY && 200>mouseY)
+       mode = "instru"; 
   
   
   if(200<mouseX && 300>mouseX && 210<mouseY && 240>mouseY)
-    mode == "Quitter";
-
+    mode = "quitter";
+  }
 }
