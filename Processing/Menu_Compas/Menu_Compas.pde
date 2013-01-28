@@ -33,6 +33,14 @@ void draw() {
   if(mode == "jeu"){
       println(j);
       background(255);
+      // formes
+      
+      
+      
+      // score
+      
+      
+      
 }
     //rect(0,h,l,h2); 
     
