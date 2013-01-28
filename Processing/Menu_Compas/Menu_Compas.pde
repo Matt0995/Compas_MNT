@@ -3,8 +3,8 @@ float h;
 float l;
 float h2;
 float m;
-
-
+float j;
+float menu;
 
 
 void setup() {
@@ -17,18 +17,20 @@ void setup() {
   
 }
 void draw() {
+  
   size(300,240);
   background(0);
   image(img,0,0);
+  String j = "Jouer !";
   
-  if(0<mouseX && 130>mouseX && 45<mouseY && m>mouseY)
+  
+  if(0<mouseX && l>mouseX && h<mouseY && h+h2>mouseY)
     if(mousePressed){
-      print("Jouer");}
+      println(j);
+}
     rect(0,h,l,h2); 
     
-  //if(mousePressed){
-    //rect(0,45,130,35);
-    //println("Jouer");
+ 
 }
   
   
