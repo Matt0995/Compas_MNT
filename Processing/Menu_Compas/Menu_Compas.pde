@@ -6,7 +6,16 @@ float m;
 String mode;
 String j = "Jouer !";
 String i = "Instructions";
+float xr = random(300)+100;// x centre
+float yr = random(300)+100;// y centre
+float lf = random(250)+25;//largeur
+float Lf = random(250)+25;//longueur
+float c1 = random(250);//
+float c2 = random(250);//couleurs
+float c3 = random(250);//
 
+  
+int F;
 
 void setup() {
   size(300, 240);
@@ -16,7 +25,11 @@ void setup() {
   l = 130;
   h2 = 35;
   m = h+h2;
+  // formes
   
+  F = (int)random(2);
+
+ //score 
 }
 void draw() {
   
@@ -31,11 +44,38 @@ void draw() {
  }
  
   if(mode == "jeu"){
-      println(j);
-      background(255);
+    background (250);
+    
+      
+      
       // formes
       
+      {
+  
+  noStroke();
+  
+  if (F==0){
+    rectMode(CENTER);
+  fill(c1,c2,c3);  
+ rect(xr,yr,Lf,lf);
+  }
+  else if (F==1){
+    fill(c1,c2,c3);
+    ellipse(xr,yr,lf,lf);
+  }   
+}
       
+  if (mousePressed){//curseur
+    line(mouseX-5, mouseY, mouseX+5, mouseY);
+    line(mouseX, mouseY-5, mouseX, mouseY+5);
+  }
+   if (mousePressed){//vrai centre
+   stroke(0);
+   line(xr-5, yr, xr+5, yr ) ;
+   line(xr, yr-5, xr, yr+5 ) ;
+  } 
+  
+  
       
       // score
       
