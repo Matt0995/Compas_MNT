@@ -79,7 +79,7 @@ void draw() {
       
       // score
       
-      print("score:");
+     // print("score:");
       
 }
     //rect(0,h,l,h2); 
